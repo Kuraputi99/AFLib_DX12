@@ -3,6 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="../AFLib_Test/AFLib_Test.vcxproj" Id="bdb9f05d-8b7b-4f3c-95b4-d0a83bef582e" />
   <Project Path="AFLib_DX12.vcxproj" Id="4de98f6c-8bad-4529-951c-5c54c54441c3" />
 </Solution>

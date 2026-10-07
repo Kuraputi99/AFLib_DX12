@@ -1,7 +1,5 @@
-#include <AFLib.h>
+#include "../Includes/AF_WinDesc.h"
 
-namespace AFLib {
-	int GetVersion() {
-		return 1;
-	}
+int InitLib(const WindowDesc desc) {
+	return 0;
 }
