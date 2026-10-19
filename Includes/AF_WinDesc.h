@@ -43,6 +43,6 @@ int ProcessMessage();
 int EndLib();
 
 // ウィンドウハンドルを取得
-HWND GetWindowHandle()
+HWND GetWindowHandle();
 
 #endif // !AF_WIN_DESC_H

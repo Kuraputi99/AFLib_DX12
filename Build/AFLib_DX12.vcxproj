@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\AFLib.h" />
+    <ClInclude Include="..\Includes\AFLib.h" />
+    <ClInclude Include="..\Includes\AF_WinDesc.h" />
     <ClInclude Include="..\Srcs\AF_PCH.h" />
   </ItemGroup>
   <ItemGroup>
@@ -92,7 +93,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>AF_PCH.h</PrecompiledHeaderFile>
-      <ForcedIncludeFiles>AF_PCH.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalIncludeDirectories>../Include;../Srcs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -114,7 +115,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>AF_PCH.h</PrecompiledHeaderFile>
-      <ForcedIncludeFiles>AF_PCH.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalIncludeDirectories>../Include;../Srcs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -134,7 +135,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>AF_PCH.h</PrecompiledHeaderFile>
-      <ForcedIncludeFiles>AF_PCH.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalIncludeDirectories>../Include;../Srcs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -156,7 +157,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>AF_PCH.h</PrecompiledHeaderFile>
-      <ForcedIncludeFiles>AF_PCH.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalIncludeDirectories>../Include;../Srcs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

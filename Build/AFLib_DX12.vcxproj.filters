@@ -18,7 +18,10 @@
     <ClInclude Include="..\Srcs\AF_PCH.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\AFLib.h">
+    <ClInclude Include="..\Includes\AFLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\AF_WinDesc.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
