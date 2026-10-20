@@ -20,8 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\AFLib.h" />
-    <ClInclude Include="..\Includes\AF_WinDesc.h" />
+    <ClInclude Include="..\Includes\AF_Application.h" />
     <ClInclude Include="..\Srcs\AF_PCH.h" />
+    <ClInclude Include="..\Srcs\AF_String.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Srcs\AF_PCH.cpp">
@@ -30,7 +31,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\Srcs\AF_WinDesc.cpp" />
+    <ClCompile Include="..\Srcs\AF_Application.cpp" />
+    <ClCompile Include="..\Srcs\AF_String.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

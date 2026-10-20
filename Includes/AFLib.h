@@ -1,10 +1,6 @@
-#ifndef AFLIB_H
+﻿#ifndef AFLIB_H
 #define AFLIB_H
 
-#include "AF_WinDesc.h"
-
-namespace AFLib {
-	int GetVersion();
-}
+#include "AF_Application.h"
 
 #endif // !AFLIB_H
