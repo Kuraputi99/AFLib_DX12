@@ -14,5 +14,12 @@
 #include <string_view>
 #include <format>
 #include <cstdio>
+#include <memory>
+
+#include <d3d12.h>
+#include <dxgi1_6.h>
+#include <wrl/client.h>
+
+using Microsoft::WRL::ComPtr;
 
 #endif // !AF_PCH_H
