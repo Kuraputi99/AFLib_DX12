@@ -22,13 +22,16 @@
     <ClInclude Include="..\Includes\AFLib.h" />
     <ClInclude Include="..\Includes\AF_Application.h" />
     <ClInclude Include="..\Includes\AF_Draw.h" />
+    <ClInclude Include="..\Includes\AF_Input.h" />
     <ClInclude Include="..\Srcs\AF_Graphics.h" />
+    <ClInclude Include="..\Srcs\AF_InputInternal.h" />
     <ClInclude Include="..\Srcs\AF_PCH.h" />
     <ClInclude Include="..\Srcs\AF_String.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Srcs\AF_Draw.cpp" />
     <ClCompile Include="..\Srcs\AF_Graphics.cpp" />
+    <ClCompile Include="..\Srcs\AF_Input.cpp" />
     <ClCompile Include="..\Srcs\AF_PCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

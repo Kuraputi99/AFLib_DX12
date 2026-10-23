@@ -2,6 +2,7 @@
 #include "AF_Application.h"
 #include "AF_String.h"
 #include "AF_Graphics.h"
+#include "AF_InputInternal.h"
 
 namespace {
 	HWND pHwnd              = nullptr;           // ウィンドウハンドル
@@ -115,6 +116,9 @@ namespace AFLib {
 			TranslateMessage(&msg);
 			DispatchMessageW(&msg);
 		}
+
+		/*-入力状態を更新-*/
+		UpdateInput();
 
 		/*-次のフレームを開始(画面のクリア)-*/
 		graphics->ClearScreen();
