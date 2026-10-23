@@ -1,12 +1,14 @@
 ﻿#include "AF_PCH.h"
 #include "AF_Application.h"
 #include "AF_String.h"
+#include "AF_Graphics.h"
 
 namespace {
-	HWND pHwnd              = nullptr; // ウィンドウハンドル
-	HINSTANCE pHinstance    = nullptr; // インスタンスハンドル
-	std::wstring pClassName;           // ウィンドウクラスの名前
-	UINT prevConsoleCP      = 0;       // コンソールの出力形態
+	HWND pHwnd              = nullptr;           // ウィンドウハンドル
+	HINSTANCE pHinstance    = nullptr;           // インスタンスハンドル
+	std::wstring pClassName;                     // ウィンドウクラスの名前
+	UINT prevConsoleCP      = 0;                 // コンソールの出力形態
+	std::unique_ptr<AFLib::Graphics> graphics;   // 描画担当
 
 	// オリジナルのウィンドウプロシージャを作成
 	LRESULT CALLBACK AF_WinProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
@@ -89,12 +91,22 @@ namespace AFLib {
 		/*-ウィンドウを表示-*/
 		ShowWindow(pHwnd, SW_SHOW);
 
+		/*-DirectX 12 の初期化-*/
+		graphics = std::make_unique<Graphics>();
+		if (graphics->Init(pHwnd, desc.width, desc.height) != 0) {
+			EndLib();
+			return -1;
+		}
+
 		return 0;
 	}
 
 	// 更新されるメッセージを処理
 	int ProcessMessage() {
-		if (!pHwnd) return -1;
+		if (!pHwnd || !graphics) return -1;
+
+		/*-前のフレームを画面に表示-*/
+		graphics->DrawScreen();
 
 		/*-メッセージ処理をさばく-*/
 		MSG msg = {};
@@ -104,11 +116,16 @@ namespace AFLib {
 			DispatchMessageW(&msg);
 		}
 
+		/*-次のフレームを開始(画面のクリア)-*/
+		graphics->ClearScreen();
+
 		return 0;
 	}
 
 	// ライブラリを終了
 	int EndLib() {
+		graphics.reset();
+
 		if (pHwnd && IsWindow(pHwnd)) DestroyWindow(pHwnd);
 
 		pHwnd = nullptr;
@@ -129,5 +146,10 @@ namespace AFLib {
 	// ウィンドウハンドルを取得
 	HWND GetWindowHandle() {
 		return pHwnd;
+	}
+
+	// 描画担当を取得(ライブラリ内部用)
+	Graphics * GetGraphics() {
+		return graphics.get();
 	}
 }
